@@ -41,6 +41,13 @@ public class App
     	}
     	return false;
     }
+    
+    public static LinkedList removeNthLastNode(LinkedListNode head, int n) {
+		
+    	
+    	return null;
+    	
+    }
 	
 	public static void main( String[] args )
     {
