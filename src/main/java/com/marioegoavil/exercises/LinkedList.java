@@ -21,8 +21,8 @@ public class LinkedList {
 	}
 	
 	public void createLinkedList(int[] lst) {
-		for(int i : lst) {
-			LinkedListNode newnode = new LinkedListNode(null, i);
+		for (int counter = lst.length - 1; counter >= 0; counter--) {
+			LinkedListNode newnode = new LinkedListNode(null, lst[counter]);
 			this.insertNodeAtHead(newnode);			
 		}
 	}

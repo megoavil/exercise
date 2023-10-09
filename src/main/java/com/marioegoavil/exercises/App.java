@@ -42,10 +42,22 @@ public class App
     	return false;
     }
     
-    public static LinkedList removeNthLastNode(LinkedListNode head, int n) {
-		
+    public static LinkedList removeNthLastNode(LinkedList head, int n) {
+		//TODO
+    	LinkedListNode left, right;
+    	left = head.head;
+    	right = head.head;
+    	for(int i=0;i<n;i++) {
+    		right = right.next;
+    		if (right==null)break;
+    	}
+    	while(right.next!=null) {
+    		left=left.next;
+    		right=right.next;
+    	}
+    	left.next = left.next.next;
     	
-    	return null;
+    	return head;
     	
     }
 	
