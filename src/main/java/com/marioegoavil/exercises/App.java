@@ -42,22 +42,29 @@ public class App
     	return false;
     }
     
-    public static LinkedList removeNthLastNode(LinkedList head, int n) {
-		//TODO
-    	LinkedListNode left, right;
-    	left = head.head;
-    	right = head.head;
+    public static void removeNthLastNode(LinkedList lst, int n) {
+		LinkedListNode left, right;
+    	left = lst.head;
+    	right = lst.head;
     	for(int i=0;i<n;i++) {
+    		if(right.next==null) {//this means that we are at the end of list exactly and need to delete the last item
+    			break;
+    		}
     		right = right.next;
-    		if (right==null)break;
     	}
+    	if(right.next==null) {
+//    		This is the case when n equals the length of the list
+//    		The only thing needed is to shift the head to the next
+    		lst.head=left.next;
+    		return;
+    	}
+    	
     	while(right.next!=null) {
     		left=left.next;
     		right=right.next;
     	}
     	left.next = left.next.next;
     	
-    	return head;
     	
     }
 	
